@@ -1,4 +1,4 @@
-import { Grid, styled, Paper } from "@mui/material";
+import { Grid, Paper, Box, styled, Container, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { getAllPokemons } from "../../api/api";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
@@ -23,24 +23,32 @@ function PokemonList() {
   );
 
   return (
-    <div>
+    <>
       <h1>Pokenitos: uma pokedex ribonita</h1>
 
-      <input
+      <TextField
+        id="standard-search"
+        label="Busque seu pokenito aqui"
         type="search"
-        placeholder="busque seu pokenito aqui"
+        variant="standard"
         onChange={(e) => setSearchField(e.target.value)}
+        style={{marginBottom:'3rem', marginLeft: '2rem'}}
       />
-      <Grid container>
-        {filteredPokemons.map((pokemon, i) => (
-          <Grid item xs={4}>
-            <Item>
-              <PokemonCard key={i} name={pokemon.name} url={pokemon.url} />
-            </Item>
+
+      <Container maxWidth="xl">
+        <Box sx={{ flexGrow: 1}} style={{ backgroundColor: "#98D9C2", padding: '2rem' }}>
+          <Grid container spacing={3}>
+            {filteredPokemons.map((pokemon, i) => (
+              <Grid item xs={8} md={1.9}>
+                <Item>
+                  <PokemonCard key={i} name={pokemon.name} url={pokemon.url} />
+                </Item>
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
-    </div>
+        </Box>
+      </Container>
+    </>
   );
 }
 
