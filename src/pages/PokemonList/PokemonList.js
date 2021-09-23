@@ -32,11 +32,14 @@ function PokemonList() {
         type="search"
         variant="standard"
         onChange={(e) => setSearchField(e.target.value)}
-        style={{marginBottom:'3rem', marginLeft: '2rem'}}
+        style={{ marginBottom: "3rem", marginLeft: "2rem" }}
       />
 
       <Container maxWidth="xl">
-        <Box sx={{ flexGrow: 1}} style={{ backgroundColor: "#98D9C2", padding: '2rem' }}>
+        <Box
+          sx={{ flexGrow: 1 }}
+          style={{ backgroundColor: "#EA2B1F", padding: "2rem" }}
+        >
           <Grid container spacing={3}>
             {filteredPokemons.map((pokemon, i) => (
               <Grid item xs={8} md={1.9}>
