@@ -42,9 +42,9 @@ function PokemonList() {
         >
           <Grid container spacing={3}>
             {filteredPokemons.map((pokemon, i) => (
-              <Grid item xs={8} md={1.9}>
+              <Grid item xs={8} md={2} key={i}>
                 <Item>
-                  <PokemonCard key={i} name={pokemon.name} url={pokemon.url} />
+                  <PokemonCard name={pokemon.name} url={pokemon.url} />
                 </Item>
               </Grid>
             ))}
