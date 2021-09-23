@@ -17,15 +17,14 @@ function App() {
 
   return (
     <div>
-      <header>
-        <h1>Pokenitos: uma pokedex ribonita</h1>
-      </header>
+      <h1>Pokenitos: uma pokedex ribonita</h1>
 
       <input
         type="search"
         placeholder="busque seu pokenito aqui"
-        onChange={e => setSearchField(e.target.value)}
+        onChange={(e) => setSearchField(e.target.value)}
       />
+
       <div>
         {filteredPokemons.map((pokemon, i) => (
           <PokemonCard key={i} name={pokemon.name} url={pokemon.url} />
