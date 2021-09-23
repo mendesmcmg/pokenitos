@@ -3,6 +3,10 @@ function PokemonCard(props) {
     .replace("https://pokeapi.co/api/v2/pokemon/", "")
     .replace("/", "");
 
+    // useEffect(() => {
+    //   getPokemonDetails(pros.url).then((response) => setPokemons(response));
+    // }, []);
+
   return (
     <>
       <p>{id}</p>
