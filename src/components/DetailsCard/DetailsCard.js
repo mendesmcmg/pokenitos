@@ -6,7 +6,7 @@ function DetailsCard({ details, type }) {
       variant="outlined"
       style={{
         backgroundColor: `${details.color.name}`,
-        color: "white",
+        color: `${(details.color.name === 'yellow' || details.color.name === 'pink') ? "black":"white"}`,
         opacity: "0.7",
         fontWeight: "bold",
       }}
