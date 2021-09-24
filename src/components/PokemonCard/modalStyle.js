@@ -6,7 +6,10 @@ export const style = {
   width: 600,
   height: 600,
   bgcolor: "#FFF",
-  border: "2px solid #FFFF",
+  border: "20px solid #FFFF",
   boxShadow: 24,
   p: 4,
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-evenly"
 };

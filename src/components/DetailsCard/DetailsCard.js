@@ -4,7 +4,6 @@ function DetailsCard({ details }) {
   return (
     <Card variant="outlined" style={{backgroundColor: `${details.color.name}`, color: 'white', opacity: '0.7', fontWeight: 'bold'}}>
       <CardContent>
-        <p><b>Color:</b> {details.color.name}</p>
         <p><b>Habitat:</b> {details.habitat.name}</p>
         <p>{details.flavor_text_entries[0].flavor_text}</p>
       </CardContent>

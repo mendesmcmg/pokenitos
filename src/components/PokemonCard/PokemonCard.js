@@ -6,6 +6,7 @@ import IdFinder from "../../utils/IdFinder";
 import DetailsCard from "../DetailsCard/DetailsCard";
 import EvolutionsCard from "../EvolutionsCard/EvolutionsCard";
 import { style } from "./modalStyle";
+import { EvolutionsDiv } from "./styles";
 
 function PokemonCard(props) {
   const [open, setOpen] = useState(false);
@@ -39,7 +40,9 @@ function PokemonCard(props) {
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
       />
       <p>{props.name}</p>
-      <Button variant="contained" onClick={handleOpen}>Ver evoluções</Button>
+      <Button variant="contained" onClick={handleOpen}>
+        Ver evoluções
+      </Button>
 
       <Modal
         open={open}
@@ -51,18 +54,15 @@ function PokemonCard(props) {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Evoluções de {props.name}
           </Typography>
-          {details.color && (
-            <DetailsCard
-              details={details}
-            />
-          )}
+          {details.color && <DetailsCard details={details} />}
 
-          
-          {evolutions.map((evolution, i) => (
-            <div key={i}>
-              <EvolutionsCard evolution={evolution} />
-            </div>
-          ))}
+          <EvolutionsDiv>
+            {evolutions.map((evolution, i) => (
+              <div key={i}>
+                <EvolutionsCard evolution={evolution} />
+              </div>
+            ))}
+          </EvolutionsDiv>
         </Box>
       </Modal>
     </>
