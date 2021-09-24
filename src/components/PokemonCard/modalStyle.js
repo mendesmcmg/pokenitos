@@ -12,5 +12,6 @@ export const style = {
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-evenly",
-  alignItems: "stretch"
+  alignItems: "stretch",
+  borderRadius: "5px"
 };
