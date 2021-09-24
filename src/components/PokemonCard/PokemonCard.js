@@ -39,7 +39,7 @@ function PokemonCard(props) {
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
       />
       <p>{props.name}</p>
-      <Button onClick={handleOpen}>Ver evoluções</Button>
+      <Button variant="contained" onClick={handleOpen}>Ver evoluções</Button>
 
       <Modal
         open={open}
@@ -56,6 +56,8 @@ function PokemonCard(props) {
               details={details}
             />
           )}
+
+          
           {evolutions.map((evolution, i) => (
             <div key={i}>
               <EvolutionsCard evolution={evolution} />
