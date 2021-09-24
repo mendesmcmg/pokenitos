@@ -1,4 +1,5 @@
 import axios from "axios";
+import evolutionsResponseParser from "../utils/evolutionsResponseParser";
 
 export const getAllPokemons = async () => {
   try {
@@ -23,16 +24,7 @@ export const getPokemonDetails = async (id) => {
 export const getEvolutions = async (url) => {
   try {
     const res = await axios.get(url);
-    const evolutionsArray = [];
-    evolutionsArray.push(res.data.chain.species);
-    if (res.data.chain.evolves_to.length > 0) {
-      evolutionsArray.push(res.data.chain.evolves_to[0].species);
-      if (res.data.chain.evolves_to[0].evolves_to.length > 0) {
-        evolutionsArray.push(
-          res.data.chain.evolves_to[0].evolves_to[0].species
-        );
-      }
-    }
+    const evolutionsArray = evolutionsResponseParser(res.data);
     return evolutionsArray;
   } catch (e) {
     console.log(e);
