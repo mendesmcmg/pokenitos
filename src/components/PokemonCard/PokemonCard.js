@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 import { getEvolutions, getPokemonDetails } from "../../api/api";
 import IdFinder from "../../utils/IdFinder";
+import DetailsCard from "../DetailsCard/DetailsCard";
 import EvolutionsCard from "../EvolutionsCard/EvolutionsCard";
 import { style } from "./modalStyle";
 
@@ -20,6 +21,7 @@ function PokemonCard(props) {
       getPokemonChain(response);
     });
     setOpen(true);
+    console.log(details);
   };
 
   const getPokemonChain = (details) => {
@@ -49,6 +51,11 @@ function PokemonCard(props) {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Evoluções de {props.name}
           </Typography>
+          {details.color && (
+            <DetailsCard
+              details={details}
+            />
+          )}
           {evolutions.map((evolution, i) => (
             <div key={i}>
               <EvolutionsCard name={evolution.name} url={evolution.url} />
