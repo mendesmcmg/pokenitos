@@ -2,6 +2,7 @@ import { Grid, Paper, Box, styled, Container, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { getAllPokemons } from "../../api/api";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
+import { MainPageTitle } from "../styles";
 
 function PokemonList() {
   const [pokemons, setPokemons] = useState([]);
@@ -12,6 +13,7 @@ function PokemonList() {
     padding: theme.spacing(1),
     textAlign: "center",
     color: theme.palette.text.secondary,
+    boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
   }));
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function PokemonList() {
 
   return (
     <>
-      <h1>Pokenitos: uma pokedex ribonita</h1>
+      <MainPageTitle>Pokenitos: uma pokedex ribonita</MainPageTitle>
 
       <TextField
         id="standard-search"
@@ -38,7 +40,7 @@ function PokemonList() {
       <Container maxWidth="xl">
         <Box
           sx={{ flexGrow: 1 }}
-          style={{ backgroundColor: "#EA2B1F", padding: "2rem" }}
+          style={{ padding: "2rem" }}
         >
           <Grid container spacing={3}>
             {filteredPokemons.map((pokemon, i) => (
