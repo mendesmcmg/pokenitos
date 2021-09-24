@@ -11,5 +11,6 @@ export const style = {
   p: 4,
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-evenly"
+  justifyContent: "space-evenly",
+  alignItems: "stretch"
 };

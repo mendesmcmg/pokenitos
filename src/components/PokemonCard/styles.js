@@ -5,3 +5,8 @@ export const EvolutionsDiv = styled.div`
   justify-content: space-evenly;
 `
 
+export const PokemonCardTitle = styled.h2`
+  font-size: 2em;
+  margin-top: 0;
+`
+

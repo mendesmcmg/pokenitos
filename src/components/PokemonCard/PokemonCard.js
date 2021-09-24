@@ -1,17 +1,23 @@
-import { Button, Modal, Typography } from "@mui/material";
+import { Button, Modal } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
-import { getEvolutions, getPokemonDetails } from "../../api/api";
+import {
+  getEvolutions,
+  getPokemonDetails,
+  getPokemonType,
+} from "../../api/api";
 import IdFinder from "../../utils/IdFinder";
 import DetailsCard from "../DetailsCard/DetailsCard";
 import EvolutionsCard from "../EvolutionsCard/EvolutionsCard";
+import CircularIndeterminate from "../Spinner/Spinner";
 import { style } from "./modalStyle";
-import { EvolutionsDiv } from "./styles";
+import { EvolutionsDiv, PokemonCardTitle } from "./styles";
 
 function PokemonCard(props) {
   const [open, setOpen] = useState(false);
   const [details, setDetails] = useState({});
   const [evolutions, setEvolutions] = useState([]);
+  const [type, setType] = useState("");
   const handleClose = () => setOpen(false);
 
   const id = IdFinder(props.url, "https://pokeapi.co/api/v2/pokemon/");
@@ -20,9 +26,15 @@ function PokemonCard(props) {
     getPokemonDetails(id).then((response) => {
       setDetails(response);
       getPokemonChain(response);
+      handleType();
     });
     setOpen(true);
-    console.log(details);
+  };
+
+  const handleType = () => {
+    getPokemonType(id).then((response) => {
+      setType(response);
+    });
   };
 
   const getPokemonChain = (details) => {
@@ -51,18 +63,23 @@ function PokemonCard(props) {
         aria-describedby="mostra evoluções disponíveis para a espécie"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Evoluções de {props.name}
-          </Typography>
-          {details.color && <DetailsCard details={details} />}
+          <PokemonCardTitle>Evoluções de {props.name}</PokemonCardTitle>
 
-          <EvolutionsDiv>
-            {evolutions.map((evolution, i) => (
-              <div key={i}>
-                <EvolutionsCard evolution={evolution} />
-              </div>
-            ))}
-          </EvolutionsDiv>
+          {details.color && type ? (
+            <>
+              <DetailsCard details={details} type={type} />
+
+              <EvolutionsDiv>
+                {evolutions.map((evolution, i) => (
+                  <div key={i}>
+                    <EvolutionsCard evolution={evolution} />
+                  </div>
+                ))}
+              </EvolutionsDiv>
+            </>
+          ) : (
+            <CircularIndeterminate style={{ alignSelf: "center" }} />
+          )}
         </Box>
       </Modal>
     </>
