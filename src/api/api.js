@@ -33,7 +33,7 @@ export const getEvolutions = async (url) => {
         );
       }
     }
-    console.log(evolutionsArray);
+    return evolutionsArray;
   } catch (e) {
     console.log(e);
   }

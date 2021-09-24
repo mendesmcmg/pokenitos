@@ -3,11 +3,13 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 import { getEvolutions, getPokemonDetails } from "../../api/api";
 import IdFinder from "../../utils/IdFinder";
+import EvolutionsCard from "../EvolutionsCard/EvolutionsCard";
 import { style } from "./modalStyle";
 
 function PokemonCard(props) {
   const [open, setOpen] = useState(false);
   const [details, setDetails] = useState({});
+  const [evolutions, setEvolutions] = useState([]);
   const handleClose = () => setOpen(false);
 
   const id = IdFinder(props.url, "https://pokeapi.co/api/v2/pokemon/");
@@ -19,11 +21,13 @@ function PokemonCard(props) {
     });
     setOpen(true);
   };
-  
+
   const getPokemonChain = (details) => {
     const url = details.evolution_chain.url;
-    getEvolutions(url);
-  }
+    getEvolutions(url).then((response) => {
+      setEvolutions(response);
+    });
+  };
 
   return (
     <>
@@ -31,7 +35,7 @@ function PokemonCard(props) {
       <img
         alt={props.name}
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
-      ></img>
+      />
       <p>{props.name}</p>
       <Button onClick={handleOpen}>Ver evoluções</Button>
 
@@ -45,6 +49,11 @@ function PokemonCard(props) {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Evoluções de {props.name}
           </Typography>
+          {evolutions.map((evolution, i) => (
+            <div key={i}>
+              <EvolutionsCard name={evolution.name} url={evolution.url} />
+            </div>
+          ))}
         </Box>
       </Modal>
     </>
