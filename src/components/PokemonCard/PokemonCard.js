@@ -58,7 +58,7 @@ function PokemonCard(props) {
           )}
           {evolutions.map((evolution, i) => (
             <div key={i}>
-              <EvolutionsCard name={evolution.name} url={evolution.url} />
+              <EvolutionsCard evolution={evolution} />
             </div>
           ))}
         </Box>

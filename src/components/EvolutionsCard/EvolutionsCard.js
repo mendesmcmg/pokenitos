@@ -1,16 +1,16 @@
 import IdFinder from "../../utils/IdFinder";
 
-function EvolutionsCard(props) {
-  const id = IdFinder(props.url, "https://pokeapi.co/api/v2/pokemon-species/");
+function EvolutionsCard({ evolution }) {
+  const id = IdFinder(evolution.url, "https://pokeapi.co/api/v2/pokemon-species/");
 
   return (
     <>
       <p>{id}</p>
       <img
-        alt={props.name}
+        alt={evolution.name}
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
       />
-      <p>{props.name}</p>
+      <p>{evolution.name}</p>
     </>
   );
 }
