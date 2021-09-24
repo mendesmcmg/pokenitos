@@ -52,7 +52,11 @@ function PokemonCard(props) {
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
       />
       <p>{props.name}</p>
-      <Button variant="contained" sx={{backgroundColor: '#ED254E'}} onClick={handleOpen}>
+      <Button
+        variant="contained"
+        sx={{ backgroundColor: "#ED254E" }}
+        onClick={handleOpen}
+      >
         Ver evoluções
       </Button>
 

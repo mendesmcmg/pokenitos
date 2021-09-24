@@ -3,8 +3,8 @@ import evolutionsResponseParser from "../utils/evolutionsResponseParser";
 
 export const getAllPokemons = async () => {
   try {
-    const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151");
-    return res.data.results;
+    const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151");
+    return response.data.results;
   } catch (e) {
     console.log(e);
   }
@@ -23,8 +23,8 @@ export const getPokemonDetails = async (id) => {
 
 export const getEvolutions = async (url) => {
   try {
-    const res = await axios.get(url);
-    const evolutionsArray = evolutionsResponseParser(res.data);
+    const response = await axios.get(url);
+    const evolutionsArray = evolutionsResponseParser(response.data);
     return evolutionsArray;
   } catch (e) {
     console.log(e);
