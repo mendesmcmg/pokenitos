@@ -20,7 +20,12 @@ yarn install
 
 ### Compila e faz hot-reloads para desenvolvimento
 ```
-yarn serve
+yarn start
+```
+
+### Lançar testes  
+```
+yarn test
 ```
 
 ### Compila e minimiza para produção
@@ -28,10 +33,6 @@ yarn serve
 yarn build
 ```
 
-### Encarrega lint e conserta arquivos
-```
-yarn lint
-```
 
 ## :white_check_mark: Testes  
 ### Unitários  
