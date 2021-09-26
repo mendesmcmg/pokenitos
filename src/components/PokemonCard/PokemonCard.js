@@ -6,7 +6,7 @@ import {
   getPokemonDetails,
   getPokemonType,
 } from "../../api/api";
-import IdFinder from "../../utils/IdFinder";
+import idFinder from "../../utils/idFinder";
 import DetailsCard from "../DetailsCard/DetailsCard";
 import EvolutionsCard from "../EvolutionsCard/EvolutionsCard";
 import CircularIndeterminate from "../Spinner/Spinner";
@@ -20,7 +20,7 @@ function PokemonCard(props) {
   const [type, setType] = useState("");
   const handleClose = () => setOpen(false);
 
-  const id = IdFinder(props.url, "https://pokeapi.co/api/v2/pokemon/");
+  const id = idFinder(props.url, "https://pokeapi.co/api/v2/pokemon/");
 
   const handleOpen = () => {
     getPokemonDetails(id).then((response) => {

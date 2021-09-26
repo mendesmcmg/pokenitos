@@ -1,7 +1,7 @@
-import IdFinder from "../../utils/IdFinder";
+import idFinder from "../../utils/idFinder";
 
 function EvolutionsCard({ evolution }) {
-  const id = IdFinder(evolution.url, "https://pokeapi.co/api/v2/pokemon-species/");
+  const id = idFinder(evolution.url, "https://pokeapi.co/api/v2/pokemon-species/");
   
   return (
     <>

@@ -1,6 +1,6 @@
-function IdFinder(originalUrl, urlToRemove) {
+function idFinder(originalUrl, urlToRemove) {
   const id = originalUrl.replace(urlToRemove, "").replace("/", "");
   return id;
 }
 
-export default IdFinder;
+export default idFinder;
