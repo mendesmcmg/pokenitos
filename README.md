@@ -1,4 +1,4 @@
-# :chart_with_upwards_trend: Pokenitos  
+# :mouse2: Pokenitos  
 
 ## :page_with_curl: Descrição
 Projeto desenvolvido usando a PokéAPI para apresentar dados dos 151 primeirospokémons da API externa em uma página, com possibilidade de filtrar os pokémons por nome. Após clicar no botão "Ver Evoluções", são mostradas informações adicionais sobre o pokémon (como o tipo, o habitat e uma breve descrição), além das evoluções da espécie.  
@@ -35,11 +35,11 @@ yarn lint
 
 ## :white_check_mark: Testes  
 ### Unitários  
-[] EvolutionsResponseParser  
-[] IdFinder  
-[] Searchbox  
-[] Listagem de pokémons  
-[] Detalhes de pokémons  
-[] Tipos de pokémons  
-[] Evoluções de pokémons  
+- [ ] EvolutionsResponseParser  
+- [ ] IdFinder  
+- [ ] Searchbox  
+- [ ] Listagem de pokémons  
+- [ ] Detalhes de pokémons  
+- [ ] Tipos de pokémons  
+- [ ] Evoluções de pokémons  
 
