@@ -37,7 +37,7 @@ yarn build
 ## :white_check_mark: Testes  
 ### Unitários  
 - [ ] EvolutionsResponseParser  
-- [ ] IdFinder  
+- [X] IdFinder  
 - [ ] Searchbox  
 - [ ] Listagem de pokémons  
 - [ ] Detalhes de pokémons  
