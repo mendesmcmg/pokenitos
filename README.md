@@ -39,7 +39,7 @@ yarn build
 - [X] IdFinder  
 - [ ] Searchbox  
 - [ ] Listagem de pokémons  
-- [ ] Detalhes de pokémons  
-- [ ] Tipos de pokémons  
+- [X] Detalhes de pokémons  
+- [X] Tipos de pokémons  
 - [X] Evoluções de pokémons  
 
