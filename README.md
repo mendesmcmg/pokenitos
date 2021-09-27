@@ -42,5 +42,5 @@ yarn build
 - [ ] Listagem de pokémons  
 - [ ] Detalhes de pokémons  
 - [ ] Tipos de pokémons  
-- [ ] Evoluções de pokémons  
+- [X] Evoluções de pokémons  
 
