@@ -35,12 +35,11 @@ yarn build
 
 
 ## :white_check_mark: Testes  
-### Unitários  
-- [ ] EvolutionsResponseParser  
+- [X] EvolutionsResponseParser  
 - [X] IdFinder  
 - [ ] Searchbox  
 - [ ] Listagem de pokémons  
 - [ ] Detalhes de pokémons  
 - [ ] Tipos de pokémons  
-- [ ] Evoluções de pokémons  
+- [X] Evoluções de pokémons  
 
