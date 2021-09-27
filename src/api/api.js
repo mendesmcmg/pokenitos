@@ -1,9 +1,12 @@
 import axios from "axios";
 import evolutionsResponseParser from "../utils/evolutionsResponseParser";
+import typesResponseParser from "../utils/typesResponseParser";
 
 export const getAllPokemons = async () => {
   try {
-    const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151");
+    const response = await axios.get(
+      "https://pokeapi.co/api/v2/pokemon?limit=151"
+    );
     return response.data.results;
   } catch (e) {
     console.log(e);
@@ -32,18 +35,13 @@ export const getEvolutions = async (url) => {
 };
 
 export const getPokemonType = async (id) => {
-  let pokemonTypes = "";
-  try {
+    try {
     const response = await axios.get(
       `https://pokeapi.co/api/v2/pokemon/${id}/`
     );
 
-    pokemonTypes += response.data.types[0].type.name;
-    if (response.data.types.length > 1) {
-      pokemonTypes += " and "+ (response.data.types[1].type.name);
-    }
-    return pokemonTypes;
-
+    const types = typesResponseParser(response.data);
+    return types;
   } catch (e) {
     console.log(e);
   }
