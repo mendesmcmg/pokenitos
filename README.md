@@ -5,7 +5,8 @@ Projeto desenvolvido usando a PokéAPI para apresentar dados dos 151 primeirospo
 [Link da página](https://pokenitos.vercel.app)
 
 ## :books: Bibliotecas utilizadas
-Para a parte visual, foram utilizadas as bibliotecas Material UI e Styled components, e para os testes, a biblioteca Jest.
+- Material UI e Styled components (parte visual)  
+- Jest e Enzyme (testes)  
 
 ## :game_die: Rotas utilizadas na API
 [Listagem dos pokenitos](https://pokeapi.co/api/v2/pokemon?limit=151)  
@@ -43,5 +44,5 @@ yarn build
 - [X] Detalhes de pokémons  
 - [X] Tipos de pokémons  
 - [X] Evoluções de pokémons  
-- [ ] PokemonCard
+- [X] PokemonCard
 
