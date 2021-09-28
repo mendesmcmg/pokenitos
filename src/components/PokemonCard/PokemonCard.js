@@ -31,16 +31,16 @@ function PokemonCard(props) {
     setOpen(true);
   };
 
-  const handleType = () => {
-    getPokemonType(id).then((response) => {
-      setType(response);
-    });
-  };
-
   const getPokemonChain = (details) => {
     const url = details.evolution_chain.url;
     getEvolutions(url).then((response) => {
       setEvolutions(response);
+    });
+  };
+
+  const handleType = () => {
+    getPokemonType(id).then((response) => {
+      setType(response);
     });
   };
 
