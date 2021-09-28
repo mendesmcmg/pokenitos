@@ -36,10 +36,12 @@ yarn build
 
 ## :white_check_mark: Testes  
 - [X] EvolutionsResponseParser  
+- [X] TypeResponseParser  
 - [X] IdFinder  
-- [ ] Searchbox  
-- [ ] Listagem de pokémons  
+- [X] Searchbox (filtragem)  
+- [X] Listagem de pokémons  
 - [X] Detalhes de pokémons  
 - [X] Tipos de pokémons  
 - [X] Evoluções de pokémons  
+- [ ] PokemonCard
 
